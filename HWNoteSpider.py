@@ -6,10 +6,10 @@ from lxml import etree
 list_url = "https://cloud.huawei.com/notepad/simplenote/query"
 content_url = "https://cloud.huawei.com/notepad/note/query"
 payload = json.dumps({
-  "traceId": "123"
+  "traceId": ""
 })
 header= {
-  'Cookie': 'cplang=en-us; HW_refts_hicloudportal_2_cloud_huawei_com=1637036129154; HW_id_hicloudportal_2_cloud_huawei_com=3f08455fcf764926b7bcc3ce94c3b099; HW_idts_hicloudportal_2_cloud_huawei_com=1637036129155; HuaweiID_CAS_ISCASLOGIN=true; CASLOGINSITE=1; LOGINACCSITE=1; HW_idn_hicloudportal_2_cloud_huawei_com=73cb901d36a64cccbf2a213d971cc6c5; HW_viewts_hicloudportal_2_cloud_huawei_com=1637043298958; siteID=1; JSESSIONID=EEF071275EC5E33DA20BA3DD5C3EA8896F6CF737F1C28C9D; loginID=EEF071275EC5E33DA20BA3DD5C3EA8896F6CF737F1C28C9D; token=467eb61ef76e5c93302b68ea0f228dc913e30225297315da; needActive=10; userId=350086000007208204; functionSupport=1_1; isLogin=1; loginSecLevel=2; webOfficeEditToken=3500860000072082041637043300603; CSRFToken=592f1fb42d7d73ed5ae712547950d1c83334a1ad1bda4b9b; HW_idvc_hicloudportal_2_cloud_huawei_com=2',
+  'Cookie': 'HW_id_hicloudportal_2_cloud_huawei_com=69d0edc067af46ce83c559ed341a178d; HW_idts_hicloudportal_2_cloud_huawei_com=1637224634426; HW_idn_hicloudportal_2_cloud_huawei_com=70a4b4b3a74f4818a170e0f2b274291e; HuaweiID_CAS_ISCASLOGIN=true; CASLOGINSITE=1; LOGINACCSITE=1; siteID=1; loginID=997E2DF1A67E41523F794D6A8F494F6A9265752E5E027AFD; token=d4feed508fafc3439f8c6d5ae0f48b30ca89b278b5b87bd9; cplang=en-us; needActive=10; userId=350086000007208204; functionSupport=1_1; isLogin=1; loginSecLevel=2; webOfficeEditToken=3500860000072082041637224649081; HW_refts_hicloudportal_2_cloud_huawei_com=1637224656338; HW_viewts_hicloudportal_2_cloud_huawei_com=1637224661546; JSESSIONID=9DFD65ED66959E1F9549E43812ED62F1CC8DA8F01C370525; HW_idvc_hicloudportal_2_cloud_huawei_com=3; CSRFToken=1d14334f7a3dc6f0167f75284ee272ef895d3ddfbb38510e',
   'Content-Type': 'application/json'
 }
 
@@ -22,7 +22,7 @@ def getAllNote():
 
 
 if __name__ == '__main__':
-    dataFile = "C:\\Users\\Forme\\Desktop\\dataFile.txt"
+    dataFile = "D:\\dataFile.txt"
     f = open(dataFile,"w+",encoding="utf8")
     result_json = getAllNote()
     for j in result_json:
@@ -36,12 +36,14 @@ if __name__ == '__main__':
             "ctagNoteInfo": "123",
             "ctagNoteTag": "123",
             "guid": guid,
+            "startCursor":"123",
             "traceId": "123"
         })
         
         contentRes = requests.request("POST", content_url, headers=header, data=contentPayload)
         # print(contentRes.text[0:100])
         contentData = json.loads(contentRes.text)
+        # print(contentData)
         t = contentData.get('rspInfo').get('data')
         content_string = json.loads(t).get('content').get('html_content')
         

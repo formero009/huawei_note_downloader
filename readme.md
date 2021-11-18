@@ -14,7 +14,6 @@ https://tempt.bj.bcebos.com/111.png?authorization=bce-auth-v1/808a52ca8aa547c6b0
 需要手动根据需要替换为图片的地址。
 
 
-爬取的结果会存放在D:盘的根目录下  query.txt为获取的所有备忘录目录json
-dataFile.txt 存放备忘录中的标题和内容
+爬取的结果会存放在D:盘的根目录下 dataFile.txt 存放备忘录中的标题和内容
 
 ###
