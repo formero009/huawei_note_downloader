@@ -9,7 +9,7 @@ payload = json.dumps({
   "traceId": ""
 })
 header= {
-  'Cookie': 'HW_id_hicloudportal_2_cloud_huawei_com=69d0edc067af46ce83c559ed341a178d; HW_idts_hicloudportal_2_cloud_huawei_com=1637224634426; HW_idn_hicloudportal_2_cloud_huawei_com=70a4b4b3a74f4818a170e0f2b274291e; HuaweiID_CAS_ISCASLOGIN=true; CASLOGINSITE=1; LOGINACCSITE=1; siteID=1; loginID=997E2DF1A67E41523F794D6A8F494F6A9265752E5E027AFD; token=d4feed508fafc3439f8c6d5ae0f48b30ca89b278b5b87bd9; cplang=en-us; needActive=10; userId=350086000007208204; functionSupport=1_1; isLogin=1; loginSecLevel=2; webOfficeEditToken=3500860000072082041637224649081; HW_refts_hicloudportal_2_cloud_huawei_com=1637224656338; HW_viewts_hicloudportal_2_cloud_huawei_com=1637224661546; JSESSIONID=9DFD65ED66959E1F9549E43812ED62F1CC8DA8F01C370525; HW_idvc_hicloudportal_2_cloud_huawei_com=3; CSRFToken=1d14334f7a3dc6f0167f75284ee272ef895d3ddfbb38510e',
+  'Cookie': '',
   'Content-Type': 'application/json'
 }
 
